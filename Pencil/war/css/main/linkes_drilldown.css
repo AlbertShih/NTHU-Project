@@ -1,0 +1,131 @@
+.leftControl * {
+    border: 0;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.leftControl li a img[name^='JH'] {
+    height: 22px;
+    width: 22px;
+    vertical-align: middle;
+    float: left /*alan*/
+}
+
+ol, ul {
+    list-style: none
+}
+
+.l_drillDownWrapper {
+    overflow: hidden;
+    position: relative;
+    background: none repeat scroll 0 0 #FDFDFD;
+    border: 1px solid whitesmoke;
+}
+
+.l_drillDown {
+    list-style: none outside none;
+    position: relative;
+    overflow: visible;
+    margin: 0
+}
+
+.l_drillDown ul {
+    display: none;
+    left: 100%;
+    list-style: none outside none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0
+}
+
+/*.l_drillDown ul a{*/
+/*text-decoration: none;*/
+/*}*/
+/*Alan Edited*/
+
+.l_drillDown li {
+    border-bottom: 1px solid #EFEFEF;
+    /*border-top: 1px ridge #dddddd;*/
+    cursor: pointer;
+    display: block;
+    padding: 0
+}
+
+/*.l_drillDown li a {*/
+/*text-decoration: none;*/
+/*}*/
+/*Alan edited*/
+.l_drillDown li.hasSubs {
+    background: url(../../image/main/drilldown_arrow.png) no-repeat scroll right center transparent;
+
+}
+
+.l_drillDown li:last-child {
+    border: medium none
+}
+
+.l_drillDown a {
+    display: block;
+    padding: 9px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.l_ddbc {
+    /*page up part*/
+    /*background: white none repeat scroll 0 0;*/
+    /*border-bottom: 0px double #000000;*/
+    /*font-size: 11px;*/
+    /*font-weight: 700;*/
+    height:25px;
+    display: block;
+    background-color:lightcoral;
+    color: #ffffff;
+    text-align : center;
+    /*padding-top:12px;*/
+    /*padding: 4px 9px*/
+
+}
+.goUp{
+    float:left;
+    width: 125px;
+    height:25px;
+    background-color:#8bc2e9;
+    color: #ffffff;
+    text-align : center;
+    /*padding-top: 12px;*/
+    font-family: arial;
+}
+.goHome{
+    float:left;
+    width: 125px;
+    height:25px;
+    background-color:#8bc2e9;
+    color: #ffffff;
+    text-align : center;
+    /*padding-top: 12px;*/
+    font-family: arial;
+}
+
+.l_ddbc a {
+    /*color: black;*/
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.l_drillDown ul.active, .l_drillDown ul.displayed {
+    display: block
+}
+
+.leftControl .hasSubs a[href*='javascript']:hover {
+    background: url(../../image/main/drilldown_arrow.png) no-repeat scroll right center;
+    background-color: #fffff0;
+}
+
+.leftControl  li a[href*='javascript']:hover:last-child {
+    background-image: none;
+    background-color: #fffff0;
+}

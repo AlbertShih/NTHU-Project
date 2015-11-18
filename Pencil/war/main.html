@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>|PENCIL| 給中小學生邊教邊學的免費平台:)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<META name="keywords" content="國中教學,國中數學,家教,PENCIL">
+<META name="description" content="讓全國中小學生邊教邊學的網站||大家一起分享知識吧！">
+<link href="css/main/main.css" rel="stylesheet" type="text/css"/>
+<link href="css/main/preference.css" rel="stylesheet" type="text/css"/>
+<link href="css/main/state.css" rel="stylesheet" type="text/css"/>
+<link href="./css/main/stickies.css" rel="stylesheet"/>
+<link href="css/main/skins/demo.css" rel="stylesheet" type="text/css"/>
+<link href="css/main/videoList.css" rel="stylesheet" type="text/css"/>
+<link href="./css/main/linkes_drilldown.css" rel="stylesheet" type="text/css">
+<link href="./css/main/stickies.css" rel="stylesheet" type="text/css">
+<link href="./css/main/homepage.css" rel="stylesheet" type="text/css"/>
+<link href="./css/main/show_sliding.css" rel="stylesheet" type="text/css"/>
+<link href="./css/main/sliding_style.css" rel="stylesheet" type="text/css"/>
+<link href="./css/main/videostate.css" rel="stylesheet" type="text/css"/>
+<link href="./css/main/jquery-ui.min.js" rel="stylesheet"/>
+<link href="./css/main/clickcard.css" rel="stylesheet" type="text/css"/>
+<link href="./css/main/info_clickcard.css" rel="stylesheet" type="text/css"/>
+
+<script src="./javascript/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="./javascript/jquery.cookie.js" type="text/javascript"></script>
+<!--<script src="./javascript/jquery-ui-1.9.1.js"></script>-->
+<script src="./javascript/common.js" type="text/javascript"></script>
+<script src="./javascript/json2.js"></script>
+<script src="./javascript/jsLoader.js" type="text/javascript"></script>
+<script src="./javascript/linkes_drilldown.js" type="text/javascript"></script>
+<!--<script src="./javascript/stickies.js" type="text/javascript"></script>-->
+<script src="./javascript/jquery.easing.1.3.js" type="text/javascript"></script>
+<!--<script src="./javascript/videoPlayerShow.js" type="text/javascript"></script>-->
+<script src="./javascript/getCourse.js" type="text/javascript"></script>
+<!--<script src="./javascript/clickcard.js" type="text/javascript"></script>-->
+<script src="./javascript/jquery-ui.js" type="text/javascript"></script>
+<script type="text/javascript" src="//education-star.disqus.com/embed.js" async></script>
+
+<!--<script type="text/javascript" src="./javascript/intro.js"></script>-->
+<link href="./css/main/introjs.css" rel="stylesheet">
+<link href="./css/main/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="./css/main/mainpage.css" rel="stylesheet" type="text/css"/>
+
+<script src="./javascript/jquery.custombox.js"></script>
+<script src="./javascript/modelwin.js"></script>
+<link rel="stylesheet" href="./css/main/modelwin.css">
+<link rel="stylesheet" href="./css/main/jquery.custombox.css">
+
+
+<link rel="stylesheet" href="./css/main/jquery.bxslider.css"/>
+<script type="text/javascript" src="./javascript/jquery.bxslider.min.js"></script>
+<!--<script src="./javascript/videoDelete.js" type="text/javascript"></script>   You've use $.getScript in the body-->
+
+
+<!--<script type="text/javascript">-->
+<!--var url=window.location.toString();-->
+<!--var str="";-->
+<!--var str_value="";-->
+<!--if(url.indexOf("?")!=-1){-->
+<!--var ary=url.split("?")[1].split("&");-->
+<!--for(var i in ary){-->
+<!--str=ary[i].split("=")[0];-->
+<!--if (str == "id") {-->
+<!--str_value = decodeURI(ary[i].split("=")[1]);-->
+<!--}-->
+<!--}-->
+<!--}-->
+<!--if(str_value!=""){-->
+<!--ajaxRequest('GET', encodeURI('video?videoId='+str_value), {-->
+<!--'Accept': 'application/json'-->
+<!--}, null, function (status, headers, body) {-->
+<!--var answer = document.getElementById('answer');-->
+<!--var ans = eval('(' + body + ')');// success callback-->
+<!--var viewCount;-->
+<!--if (ans.length != 0) {-->
+<!--var ut = "https://www.googleapis.com/youtube/v3/videos?id=" +-->
+<!--escapeHtml(str_value) +-->
+<!--"&key=AIzaSyBaDrIDUqfPRMaTl7X3bg1ekPLQAp9FhBI%20" +-->
+<!--"&part=statistics" +-->
+<!--"&fields=items(statistics)";-->
+<!--ajaxRequest('GET', ut, {-->
+<!--'Accept': 'application/json'-->
+<!--}, null, function (status, headers, body) {-->
+<!--var s = JSON.parse(body);-->
+<!--viewCount=s.items[0].statistics.viewCount;-->
+<!--videoPlayerFrameShow(ans[0].id,ans[0].title,viewCount,ans[0].description);-->
+<!--}, function (status, headers, body) { // error callback-->
+<!--switch (status) {-->
+<!--case 404:-->
+<!--status404Handler();-->
+<!--default:-->
+<!--// do nothing-->
+<!--}-->
+<!--}, null);-->
+<!--}-->
+<!--}, function (status, headers, body) { // error callback-->
+<!--}, null);-->
+<!--}-->
+<!--</script>-->
+<!--iframe Script-->
+
+<script type="text/javascript">
+
+    var pa,ti;
+    $(function () {
+        $("#dialog").dialog({
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 500
+            },
+            hide: {
+                effect: "drop",
+                duration: 500
+            }
+        });
+        $(".opener").click(function () {
+            pa = pathToUpload;
+            ti = TWlastChild;
+            ajaxRequest('GET','login', {
+                'Accept': 'application/json'
+            }, null, function (status, headers, body) {
+                var dlg = $("#dialog iframe");
+                dlg.attr('src',"http://2.vitalon-p.appspot.com/index.html#state=upload&playlist=PLJHF1meCZQArNfWbn7qaEA_1sWMV2arWx");
+                dlg.attr('id',"uploadFrame");
+                $("#dialog").dialog("open");
+            }, function (status, headers, body) { // error callback
+                switch (status) {
+                    case 406:
+                        alert("必須登入");
+                    default:
+                    // do nothing
+                }
+            }, null);
+
+        });
+    });
+
+</script>
+
+<!--sendCourseToServer-->
+<script type="text/javascript">
+    if (typeof window.addEventListener != 'undefined') {             //Using HTML5 postMessage
+        window.addEventListener('message', receiveMessage, false);
+    } else if (typeof window.attachEvent != 'undefined') {
+        window.attachEvent('onmessage', receiveMessage);
+    }
+    function receiveMessage(e) {			//receiveMessage
+        var data = e.data;
+        switch (data.case) {					//case1 : existing file title,des are OK
+            case '1':
+                vTitile = data.title;		//global
+                vDes = data.description;
+                break;
+            case '2':						//case2 : existing file id is OK
+                vId = data.videoId;
+                sendCourseToServer(vId, vDes);
+                break;
+            case '3':						//case3 : post current path(=title) to uploader
+                getTitle();
+                break;
+            default:
+                break;
+        }
+        ;
+    }
+    function getTitle(){
+        var message = {'case': '1', 'title': ti};
+        document.getElementById("uploadFrame").contentWindow
+                .postMessage(message,'*');
+    }
+    function sendCourseToServer(videoId,description) {
+        var path = pa;
+        var p = new Array(10);
+        var o = path.split("/");
+        for (var i = 0; i < o.length; i++) {
+            p[i] = o[i];
+            //   alert(p[i]);
+        }
+        for (var i = o.length; i < 10; i++) {
+            p[i] = "";
+            //  alert(p[i]);
+        }
+        ajaxRequest('GET','login', {
+            'Accept': 'application/json'
+        }, null, function (status, headers, body) {
+            var s = JSON.parse(body);
+            var id=s.id;
+            ajaxRequest('POST', encodeURI('video'), {
+                'Content-Type': 'application/json;charset=UTF-8'
+            }, '{' +
+                    '"id":"' + videoId + '"' +
+                    ',' + '"path1":"' + p[0] + '"' +
+                    ',' + '"path2":"' + p[1] + '"' +
+                    ',' + '"path3":"' + p[2] + '"' +
+                    ',' + '"path4":"' + p[3] + '"' +
+                    ',' + '"path5":"' + p[4] + '"' +
+                    ',' + '"title":"' + ti+ '"' +
+                    ',' + '"description":"' + description + '"' +
+                    ',' + '"userId":"' + id + '"' +
+                    '}', function (status, headers, body) { // success
+                // callback
+                document.getElementById('hashcode').value = "";
+
+            }, function (status, headers, body) { // error callback
+                alert('error: ' + status);
+            }, null); // run callbacks in global scope
+        }, function (status, headers, body) { // error callback
+            switch (status) {
+                case 406:
+                //notLoginHandling();
+                default:
+                // do nothing
+            }
+        }, null);
+        return false;
+    }
+    $(document).ready(function () {
+        $("#urlBtn").click(function () {
+            var id = document.getElementById("hashcode").value;
+            var title = document.getElementById("title1").value;
+            var description = document.getElementById("description1").value;
+            sendCourseToServer(id, title, description);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(".topBar").ready(function () {
+        // check login
+        $.getScript('./javascript/check_login.js', function (data, textStatus, jqxhr) {
+            checkLogin();
+        });
+        //logout
+        $("#logout").click(function () {
+            $.getScript('./javascript/logout.js', function (data, textStatus, jqxhr) {
+                logout();
+            });
+        });
+        //login
+        $("#login").click(function () {
+            window.location="https://accounts.google.com/o/oauth2/auth?" +
+                    "client_id=49990830201.apps.googleusercontent.com" +
+                    "&response_type=code&scope=https://www.googleapis.com/auth/plus.login" +
+                    "&redirect_uri=http://education-star.appspot.com/oauth2callback" +
+                    "&approval_prompt=auto";
+//            window.location="https://accounts.google.com/o/oauth2/auth?" +
+//                    "client_id=511406630946.apps.googleusercontent.com" +
+//                    "&response_type=code&scope=https://www.googleapis.com/auth/plus.login" +
+//                    "&redirect_uri=http://vitalon-p.appspot.com/oauth2callback";
+//            window.open("https://accounts.google.com/o/oauth2/auth?" +
+//                    "client_id=49990830201.apps.googleusercontent.com" +
+//                    "&response_type=code&scope=https://www.googleapis.com/auth/plus.login" +
+//                    "&redirect_uri=http://education-star.appspot.com/oauth2callback" +
+//                    "&state=/profile", 'login', config = 'height=500,width=500');
+//            window.open("https://accounts.google.com/o/oauth2/auth?"+
+//                    "client_id=49990830201.apps.googleusercontent.com"+
+//                    "&response_type=code&scope=https://www.googleapis.com/auth/plus.login"+
+//                    "&redirect_uri=http://localhost:8888/oauth2callback"+
+//                    "&state=/profile", 'login', config='height=500,width=500');
+//            window.location="http://www.facebook.com/dialog/oauth?client_id=656442537728789" +
+//                    "&redirect_uri=http://localhost:8888/oauth2callback&scope=email";
+//            window.location="http://www.facebook.com/dialog/oauth?client_id=656442537728789" +
+//                    "&redirect_uri=http://education-star.appspot.com/oauth2callback&scope=email";
+//            $.getScript('./javascript/login.js', function (data, textStatus, jqxhr) {
+//                login();
+//            });
+        })
+        $("#uploadManage").click(function(){
+            $.getScript('./javascript/videoDelete.js', function (data, textStatus, jqxhr) {
+                $("hidden")
+                showUserVideo();
+            });
+        })
+        //noteALL
+        $("#note").click(function () {
+            $.getScript('./javascript/noteTable.js', function (data, textStatus, jqxhr) {
+                noteTable();
+            });
+        });
+        //search
+        var searchBar = document.getElementById("searchBar");
+        searchBar.onkeyup = function (e) {
+            $.getScript('./javascript/search.js', function (data, textStatus, jqxhr) {
+                if (e.keyCode == 13) {
+                    searchVideo(searchBar.value);
+                }
+            });
+        }
+    })
+    $(".leftControl").ready(function () {
+        // getCourseFromServer
+        $('.drillDownMenu').linkesDrillDown();
+        /*this is just to present something when clicking a dummy link*/
+        var lastChild = $('.drillDownMenu a[href="#a"]');
+        lastChild
+                .click(function (e) {
+                    var et = e.target;
+                    selfID = et.id;
+                    selfTitle = et.title;
+                    try {
+                        $(this).parents().siblings('.leftControl li').css("background-color", "#FDFDFD");
+                        $(et).parent().css("background-color", "lightgrey");
+                        TWlastChild = $(et).clone().children().remove().end().text(); //select the collection and remove the child node text
+//                        alert(TWlastChild);
+                        e.stopPropagation();
+                    } catch (e) {
+                        console.log('fail on lControl');
+                    }
+                })
+                .attr('href', 'javascript:pathToUpload=pathStr.join("/")+"/"+selfID;getCourseFromServer(pathToUpload);') //按下東西可以綁事件
+                .append($("<span />",{
+                    "class":"lastCnt"
+                }).css({
+                            'font-family': 'helvetica neue ultralight',
+                            'font-size': 'small',
+                            'vertical-align':'super'
+                        }).click(function(e){
+                            e.stopPropagation();
+                        }));
+        /*Not last child have a span*/
+        $('.drillDownMenu a[href="javascript:;"]')
+                .append($("<label />")
+
+                        .css({
+                            'font-family': 'helvetica neue ultralight',
+                            'font-size': 'small',
+                            'vertical-align':'super'
+                        })
+                        .text("[")
+                )
+                .append($("<span />")
+                        .addClass('cnt')
+                        .css({
+                            'font-family': 'helvetica neue ultralight',
+                            'font-size': 'small',
+                            'vertical-align':'super'
+                        })
+                        .text(0)
+                )
+                .append($("<label />")
+
+                        .css({
+                            'font-family': 'helvetica neue ultralight',
+                            'font-size': 'small',
+                            'vertical-align':'super'
+                        })
+                        .text("]")
+                );
+
+//        $.each($('.cnt'),function(index,value){                 /*After AJAX completed, we should sum up the last children's count to parent*/
+//            $(this).text(index);
+//        });
+
+        /*Check the .lastCnt and assign their uniqueID*/
+        $.each($('.lastCnt'),function(index,value){
+            $(this).attr('id','courseCnt'+ index);
+        });
+        /*Send AJAX and add counting number to the last children*/
+        getCourseCount();
+
+    });
+    $(window).load(function () {
+        if(window.innerHeight > 740){
+            $('.content').css('min-height', window.innerHeight+'px');
+        }
+        $(".leftControl").removeClass("hideAll");
+        $("#answer").removeClass("hideAll");
+        $(".videoPlayerFrame").removeClass("hideAll");
+        $(".playerFramebtnWrapper").removeClass("hideAll");
+    });
+</script>
+<!--hide video page check login-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".videoPlayerFrame").hide();
+        $("#loading").hide();
+        $("#logout").hide();
+        $("#firstUploadBtn").hide();
+    });
+    $(window).resize(function() {
+        if(window.innerHeight > 740){
+            $('.content').css('min-height', window.innerHeight+'px');
+        }
+    });
+</script>
+
+
+</head>
+
+<body>
+<div class="bodyContainer">
+<div class="topBarContainer">
+    <div class="topBar">
+        <div class="logoPic" data-step="1" data-intro="回到Pencil首頁">
+            <a href="http://education-star.appspot.com"><img src="./image/main/logo.png" width="213px" height="40px"/></a>
+        </div>
+        <input type="text" id="searchBar" data-step="2" data-intro="搜尋單元名稱"/>
+        <button class="icon" id="uploadManage" data-step="3" data-intro="上傳影片管理"><img src="./image/main/upload.png" width="30px" height="30px"/></button>
+        <button class="icon" id="history" data-step="4" data-intro="觀看記錄(開發中)"><img src="./image/main/history.png" width="30px" height="30px"/></button>
+        <button class="icon" id="note" data-step="5" data-intro="筆記管理(開發中)"><img src="./image/main/note.png" width="30px" height="30px"/></button>
+        <button class="icon" id="watchLater"  data-step="6" data-intro="稍後觀看清單(開發中)"><img src="./image/main/watchLater.png" width="30px" height="30px"/>
+        </button>
+        <button class="icon" id="playWatchLater"  data-step="7" data-intro="播放稍後觀看清單(開發中)"><img src="./image/main/playWatchLater.png" width="30px" height="30px"/>
+        </button>
+        <button class="icon" id="preference" data-step="8" data-intro="個人化設定(開發中)"><img src="./image/main/preference.png" width="30px" height="30px"/>
+        </button>
+        <!--<script type="text/javascript">STICKIES.open(); // Button must declare before this line, or it would be a bug</script>-->
+
+        <button id="userPicIcon"><img id="userPic">
+            <!--width="30px" height="30px">-->
+        </button>
+        <span id="name"></span>
+
+        <button class="icon" id="login" data-step="9" data-intro="登入，獲得完整的功能，本站採用google帳戶進行登入，需先註冊google帳號~" data-position="left"><img src="./image/main/login.png" width="25px" height="25px"/></button>
+        <button class="icon" id="logout"><img src="./image/main/logout.png" width="25px" height="25px"/></button>
+    </div>
+</div>
+<div class="leftControl hideAll">
+    <ul class="drillDownMenu" data-step="10" data-intro="影片分類，針對不同年級課綱進行分類，選擇想要學習的單元，開始使用PENCIL!!" data-position="right">
+        <li><a href="#">國小</a>
+            <ul>
+                <li><a href="#a">建構當中</a></li>
+            </ul>
+        </li>
+        <li><a href="#" id="JH">國中</a>
+            <ul>
+                <li><a href="#" id="7thGrader">一年級</a>
+                    <ul>
+                        <li><a href="#" id="math">數學</a>
+                            <ul>
+                                <li><a href="#" id="numberAndQuantity">數與量</a>
+                                    <ul>
+                                        <li><a href="#a" id="sub1" title="能理解質數的意義，並認識100以內的質數。">質數</a></li>
+                                        <li><a href="#a" id="sub2" title="能理解因數、質因數、倍數、公因數、公倍數及互質的概念，並熟練質因數分解的計算方法。">因數、倍數</a></li>
+                                        <li><a href="#a" id="sub3" title="能以最大公因數、最小公倍數熟練約分、擴分、最簡分數及分數加減的計算。">因數、倍數的計算</a></li>
+                                        <li><a href="#a" id="sub4" title="能認識負數，並能以「正、負」表徵生活中性質相反的量。">認識負數</a></li>
+                                        <li><a href="#a" id="sub5" title="能認識絕對值，並能利用絕對值比較負數的大小。">絕對值比較負數的大小</a></li>
+                                        <li><a href="#a" id="sub6" title="能理解負數的特性並熟練數(含小數、分數)的四則混合運算。">負數的四則運算</a></li>
+                                        <li><a href="#a" id="sub7" title="能熟練數的運算規則。">熟練數的運算規則</a></li>
+                                        <li><a href="#a" id="sub8" title="能理解數線上兩點的距離公式，及能藉數線上數的位置驗證數的大小關係。">數線上兩點的距離公式</a></li>
+                                        <li><a href="#a" id="sub9" title="能以不等式標示數的範圍或數線上任一線段的範圍。">不等式標示數的範圍</a></li>
+                                        <li><a href="#a" id="sub10" title="能理解指數為非負整數的次方，並能運用到算式中。">指數和非負整數的次方</a></li>
+                                        <li><a href="#a" id="sub11" title="能理解同底數的相乘或相除的指數律。">相乘或相除的指數律</a></li>
+                                        <li><a href="#a" id="sub12" title="能用科學記號表示法表達很大的數或很小的數。">科學記號</a></li>
+                                        <li><a href="#a" id="sub13" title="能理解比、比例式、正比、反比的意義，並能解決生活中有關比例的問題。">比例</a></li>
+                                        <li><a href="#a" id="sub14" title="能熟練比例式的基本運算。">比例式的運算</a></li>
+                                        <li><a href="#a" id="sub15" title="能理解連比、連比例式的意義，並能解決生活中有關連比例的問題。">連比、連比例式</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" id="algebra">代數</a>
+                                    <ul>
+                                        <li><a href="#a" id="sub1" title="能熟練符號的意義，及其代數運算。">符號與運算</a></li>
+                                        <li><a href="#a" id="sub2" title="能用符號算式記錄生活情境中的數學問題。">符號算式問題</a></li>
+                                        <li><a href="#a" id="sub3" title="能理解一元一次方程式及其解的意義，並能由具體情境中列出一元一次方程式。">一元一次方程式及其解的意義</a>
+                                        </li>
+                                        <li><a href="#a" id="sub4" title="能以等量公理解一元一次方程式，並做驗算。">等量公理解一元一次方程式</a></li>
+                                        <li><a href="#a" id="sub5" title="能利用移項法則來解一元一次方程式，並做驗算。">移項法則解一元一次方程式</a></li>
+                                        <li><a href="#a" id="sub6" title="能理解二元一次方程式及其解的意義，並能由具體情境中列出二元一次方程式。">二元一次方程式及其解的意義</a>
+                                        </li>
+                                        <li><a href="#a" id="sub7" title="能理解二元一次聯立方程式，及其解的意義，並能由具體情境中列出二元一次聯立方程式。">二元一次聯立方程式及其解的意義</a>
+                                        </li>
+                                        <li><a href="#a" id="sub8" title="能熟練使用代入消去法與加減消去法解二元一次方程式的解。">代入消去法與加減消去法解二元一次方程式</a>
+                                        </li>
+                                        <li><a href="#a" id="sub9" title="能認識函數。">認識函數</a></li>
+                                        <li><a href="#a" id="sub10" title="能認識常數函數及一次函數。">常數函數及一次函數</a></li>
+                                        <li><a href="#a" id="sub11" title="能理解平面直角坐標系。">平面直角坐標系</a></li>
+                                        <li><a href="#a" id="sub12" title="能在直角坐標平面上描繪常數函數及一次函數的圖形。">描繪常數函數及一次函數</a>
+                                        </li>
+                                        <li><a href="#a" id="sub13" title="能在直角坐標平面上描繪二元一次方程式的圖形。">描繪二元一次方程式</a></li>
+                                        <li><a href="#a" id="sub14" title="能理解二元一次聯立方程式解的幾何意義。">二元一次聯立方程式解的幾何意義</a></li>
+                                        <li><a href="#a" id="sub15" title="能理解不等式的意義。">不等式的意義</a></li>
+                                        <li><a href="#a" id="sub16" title="能由具體情境中列出簡單的一元一次不等式。">一元一次不等式</a></li>
+                                        <li><a href="#a" id="sub17" title="能解出一元一次不等式，並在數線上標示相關的線段。">解出一元一次不等式</a></li>
+                                        <li><a href="#a" id="sub18" title="能說明a ≤ x ≤ b時y=cx＋d的範圍，並在數線上圖示。">數線上圖示不等式的範圍</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#" id="8thGrader">二年級</a>
+                    <ul>
+                        <li><a href="#" id="math">數學</a>
+                            <ul>
+                                <li><a href="#" id="numberAndQuantity">數與量</a>
+                                    <ul>
+                                        <li><a href="#a" id="sub1" title="能理解二次方根的意義及熟練二次方根的計算。">二次方根</a></li>
+                                        <li><a href="#a" id="sub2" title="能求二次方根的近似值。">二次方根的近似值</a></li>
+                                        <li><a href="#a" id="sub3" title="能理解根式的化簡及四則運算。">根式的化簡及四則運算</a></li>
+                                        <li><a href="#a" id="sub4" title="能在日常生活中，觀察有次序的數列，並理解其規則性。">理解數列與其規則性</a></li>
+                                        <li><a href="#a" id="sub5" title="能觀察出等差數列的規則性，並能利用首項、公差計算出等差數列的一般項。">等差數列</a></li>
+                                        <li><a href="#a" id="sub6" title="能理解等差級數求和的公式，並能解決生活中相關的問題。">等差級數</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" id="algebra">代數</a>
+                                    <ul>
+                                        <li><a href="#a" id="sub1" title="能熟練二次式的乘法公式。">乘法公式</a></li>
+                                        <li><a href="#a" id="sub2" title="能認識多項式及相關名詞。">多項式及相關名詞</a></li>
+                                        <li><a href="#a" id="sub3" title="能熟練多項式的加、減、乘、除四則運算。">多項式的四則運算</a></li>
+                                        <li><a href="#a" id="sub4" title="能理解畢氏定理及其應用。">畢氏定理及其應用</a></li>
+                                        <li><a href="#a" id="sub5" title="能理解二次多項式因式分解的意義">二次多項式因式分解</a></li>
+                                        <li><a href="#a" id="sub6" title="能利用提公因式法分解二次多項式。">提公因式分解二次多項式</a></li>
+                                        <li><a href="#a" id="sub7" title="能利用乘法公式與十字交乘法做因式分解。">乘法公式與十字交乘法做因式分解</a></li>
+                                        <li><a href="#a" id="sub8" title="能在具體情境中認識一元二次方程式，並理解其解的意義。">認識一元二次方程式</a></li>
+                                        <li><a href="#a" id="sub9" title="能利用因式分解來解一元二次方程式。">因式分解解一元二次方程式</a></li>
+                                        <li><a href="#a" id="sub10" title="能利用配方法解一元二次方程式。">配方法解一元二次方程式</a></li>
+                                        <li><a href="#a" id="sub11" title="能利用一元二次方程式解應用問題。">一元二次方程式解應用問題</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" id="geometry">幾何</a>
+                                    <ul>
+                                        <li><a href="#a" id="sub1" title="能認識一些簡單圖形及其常用符號，如點、線、線段、射線、角、三角形的符號。">認識簡單圖形</a></li>
+                                        <li><a href="#a" id="sub2" title="能理解角的基本性質。">角的基本性質</a></li>
+                                        <li><a href="#a" id="sub3" title="能理解凸多邊形內角和以及外角和公式">凸多邊形內角和以及外角和</a></li>
+                                        <li><a href="#a" id="sub4" title="能認識垂直以及相關的概念">垂直</a></li>
+                                        <li><a href="#a" id="sub5" title="能理解平行的意義，平行線截線性質，以及平行線判別性質">平行線截線、平行線判別</a></li>
+                                        <li><a href="#a" id="sub6" title="能理解線對稱的意義，以及能應用到理解平面圖形的幾何性質">線對稱</a></li>
+                                        <li><a href="#a" id="sub7" title="能理解三角形全等性質">三角形全等性質</a></li>
+                                        <li><a href="#a" id="sub8" title="能熟練直角坐標上任兩點的距離公式">直角坐標上兩點距離公式</a></li>
+                                        <li><a href="#a" id="sub9" title="能理解三角形的基本性質">三角形基本性質</a></li>
+                                        <li><a href="#a" id="sub10" title="能認識尺規作圖並能做基本的尺規作圖">尺規作圖</a></li>
+                                        <li><a href="#a" id="sub11" title="能理解特殊的三角形與特殊的四邊形的性質">特殊的三角形與四邊形</a></li>
+                                        <li><a href="#a" id="sub12" title="能理解平行四邊形及其性質">平行四邊形性質</a></li>
+                                        <li><a href="#a" id="sub13" title="能用線對稱概念，理解等腰三角形、正方形、菱形、箏形等平面圖形">線對稱概念理解圖形</a></li>
+                                        <li><a href="#a" id="sub14" title="能理解梯形及其性質">梯形及其性質</a></li>
+                                        <li><a href="#a" id="sub15" title="能舉例說明，有一些敘述成立時，其逆敘述也會成立；但是，也有一些敘述成立時，其逆敘述卻不成立">簡單邏輯判斷</a></li>
+                                        <li><a href="#a" id="sub16" title="能針對幾何推理中的步驟，寫出所依據的幾何性質">幾何推理中的步驟</a></li>
+                                        <li><a href="#a" id="sub17" title="能從幾何圖形的判別性質，判斷圖形的包含關係">判斷圖形的包含關係</a></li>
+                                        <li><a href="#a" id="sub18" title="能熟練計算簡單圖形及其複合圖形的面積">計算圖形及其複合圖形的面積</a></li>
+                                        <li><a href="#a" id="sub19" title="能理解與圓相關的概念(如半徑、弦、弧、弓形等)的意義">圓</a></li>
+                                        <li><a href="#a" id="sub20" title="能理解弧長的公式以及扇形面積的公式">弧長的公式以及扇形面積的公式</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#" id="9thGrader">三年級</a>
+                    <ul>
+                        <li><a href="#" id="math">數學</a>
+                            <ul>
+                                <li><a href="#" id="geometry">幾何</a>
+                                    <ul>
+                                        <li><a href="#a" id="sub1" title="能理解平面圖形縮放的意義">平面圖形縮放的意義</a></li>
+                                        <li><a href="#a" id="sub2" title="能理解多邊形相似的意義">多邊形相似的意義</a></li>
+                                        <li><a href="#a" id="sub3" title="能理解三角形的相似性質">三角形的相似性質</a></li>
+                                        <li><a href="#a" id="sub4" title="能理解平行線截比例線段性質及其逆敘述">平行線截比例線段性質及其逆敘述</a></li>
+                                        <li><a href="#a" id="sub5" title="能利用相似三角形對應邊成比例的觀念解應用問題">相似三角形對應邊成比例</a></li>
+                                        <li><a href="#a" id="sub6" title="能理解圓的幾何性質">圓的幾何性質</a></li>
+                                        <li><a href="#a" id="sub7" title="能理解直線與圓及兩圓的關係">直線與圓及兩圓的關係</a></li>
+                                        <li><a href="#a" id="sub8" title="能理解多邊形外心的意義和相關性質">多邊形外心</a></li>
+                                        <li><a href="#a" id="sub9" title="能理解多邊形內心的意義和相關性質">多邊形內心</a></li>
+                                        <li><a href="#a" id="sub10" title="能理解多邊形重心的意義和相關性質">多邊形重心</a></li>
+                                        <li><a href="#a" id="sub11" title="能理解正多邊形的幾何性質(含線對稱、內切圓、外接圓)。">正多邊形的幾何性質</a></li>
+                                        <li><a href="#a" id="sub12" title="能認識證明的意義">證明的意義</a></li>
+                                        <li><a href="#a" id="sub13" title="能認識線與平面、平面與平面的垂直關係與平行關係。">線與平面、平面與平面的垂直關係與平行關係</a></li>
+                                        <li><a href="#a" id="sub14" title="能理解簡單立體圖形">簡單立體圖形</a></li>
+                                        <li><a href="#a" id="sub15" title="能理解簡單立體圖形的展開圖，並能利用展開圖來計算立體圖形的表面積或側面積">立體圖形的表面積或側面積</a></li>
+                                        <li><a href="#a" id="sub16" title="能計算直角柱、直圓柱的體積">直角柱、直圓柱的體積</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" id="algebra">代數</a>
+                                    <ul>
+                                        <li><a href="#a" id="sub1" title="能理解二次函數的意義">二次函數的意義</a></li>
+                                        <li><a href="#a" id="sub2" title="能描繪二次函數的圖形">二次函數的圖形</a></li>
+                                        <li><a href="#a" id="sub3" title="能計算二次函數的最大值或最小值">二次函數的最大值或最小值</a></li>
+                                        <li><a href="#a" id="sub4" title="能解決二次函數的相關應用問題。">二次函數的相關應用問題</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" id="statistics">機率與統計</a>
+                                    <ul>
+                                        <li><a href="#a" id="sub1" title="能將原始資料整理成次數分配表，並製作統計圖形，來顯示資料蘊含的意義">製作統計圖形</a></li>
+                                        <li><a href="#a" id="sub2" title="認識平均數、中位數與眾數。">平均數、中位數與眾數</a></li>
+                                        <li><a href="#a" id="sub3" title="能認識全距及四分位距，並製作盒狀圖">全距及四分位距，並製作盒狀圖</a></li>
+                                        <li><a href="#a" id="sub4" title="能認識百分位數的概念，並認識第10、25、50、75、90百分位數">百分位數的概念</a></li>
+                                        <li><a href="#a" id="sub5" title="能在具體情境中認識機率的概念">機率的概念</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">高中</a>
+            <ul>
+                <li><a href="#a">建構當中</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="content">
+<!--<div id="loginDialog">-->
+
+<!--</div>-->
+<div id="dialog" title="換我來教" onclick="getTitle()">
+    <iframe style="width: 690px;
+height: 440px;
+border: 1px solid #F8BBBB;" frameborder="0"></iframe>
+</div>
+<div class="mainpage">
+    <div id="pencil_logo">
+        <div class="logospace">
+            <img id="" class="" src="./image/main/mainlogo.jpg">
+            <div>
+                <a id="guidebtn" href="javascript:JavaScript.load('./javascript/intro.js',function(){introJs().start();})">網站導覽</a>
+            </div>
+        </div>
+        <table id="___01" width="356" height="348" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="3">
+                    <img src="./image/mainpage/penciller66_01.gif" width="356" height="160" alt=""></td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <img src="./image/mainpage/penciller66_02.gif" width="14" height="188" alt=""></td>
+                <td>
+                    <a href="https://www.google.com/intl/zh-TW/chrome/browser/?hl=zh_tw&brand=CHMB&utm_campaign=zh_tw&utm_source=zh_tw-ha-apac-tw-sk&utm_medium=ha" target="_blank"
+                       onmouseover="window.status='前往下載Google Chrome';  return true;"
+                       onmouseout="window.status='';  return true;">
+                        <img src="./image/mainpage/penciller22_03.gif" width="327" height="111" border="0" alt=""></a></td>
+                <td rowspan="2">
+                    <img src="./image/mainpage/penciller66_04.gif" width="15" height="188" alt=""></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="./image/mainpage/penciller66_05.gif" width="327" height="77" alt=""></td>
+            </tr>
+        </table>
+    </div>
+    <!--<img src="./image/main/Aug.gif" alt=""/>-->
+</div>
+<!--<iframe src="http://2.vitalon-p.appspot.com/index.html#state=upload&playlist=PLJHF1meCZQArNfWbn7qaEA_1sWMV2arWx"-->
+<!--width="500px" height="500px" id="uploadFrame"></iframe>-->
+
+<!--<div class="playerFramebtnWrapper">-->
+<!--&lt;!&ndash;<div id="video-practices"  class="playerFrameBtn-effect">小試身手</div>&ndash;&gt;-->
+<!--<div id="videoTryToUpload" class="playerFrameBtn-effect opener" onclick="">-->
+<!--<p id="hovercardUpload" style="margin-bottom:0px; margin-top:0px">換我來教</p>-->
+<!--</div>-->
+<!--</div>-->
+
+<div class="videoPlayerFrame hideAll">
+    <div>
+        <!-- <div class="playerFramebtnWrapper">
+            <div id="videoTryToUpload" class="playerFrameBtn-effect opener" onclick="">
+                <p id="hovercardUpload" style="margin-bottom:0px; margin-top:0px">換我來教</p>
+            </div>
+        </div> -->
+        <div class="video-title"></div>
+        <div>
+            <span class="video-subtitle"></span>
+            <span class="uploader-name">
+                本影片由
+                <b id="penciler">某某某某</b>
+                提供
+            </span>
+        </div>
+    </div>
+    <div class="vSrcContainer" width="800">
+        <div id="player" width="800" height="450"></div>
+    </div>
+    <div class="videoControlPanel" style="height:50px;">
+        <!--<img class="add-sticky" id="noteBtn" src="./image/main/note_icon.png"/>-->
+        <div class="video-panel">
+            <!-- <progress value="0" max="100" id="videoProgress"></progress> -->
+            <!--<script src="javascript/playerScript.js" type="text/javascript"></script>-->
+            <div class="video-toolbar">
+                <div style="float:left;">
+                    <!-- <span>
+                        <button id="booking-button" booking-state="false" onclick="booking()">
+                            <span class="booking-pictureeffect">
+                                <img id="uix-booking-icon" class="uix-button-icon-watch-like" src="./image/main/booking_picture.png">
+                            </span>
+                            <span class="bookingbtn-wordeffect">訂閱</span>
+                        </button>
+                    </span>
+                        <div id="eclr-clickcard-event" class="eclr-uix-clickcard-card eclr-uix-clickcard-card-reverse">
+                            <div class="eclr-card-border-arrow eclr-card-border-arrow-vertical" style="left: 29.5px;"></div>
+                            <div class="eclr-card-border">
+                                <div class="eclr-card-body-arrow eclr-card-body-arrow-vertical" style="left: 29.5px;"></div>
+                                <div class="eclr-card-body">
+                                    <div class="hovercard-content">
+                                        <h3 class="hovercard-content-header">訂閱影片</h3>
+                                        <div class="hovercard-content-message">
+                                            獲得由
+                                            <span class="eclr-user-name" dir="ltr" onClick="">王小明</span>
+                                            提供的最新影片資訊。
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+        <span class="playerFramebtnWrapper">
+            <!--<div id="video-practices"  class="playerFrameBtn-effect">小試身手</div>-->
+            <span id="videoTryToUpload" class="playerFrameBtn-effect opener" onclick="">
+                <p id="hovercardUpload" style="margin-bottom:0px; margin-top:0px">我來教教看</p>
+            </span>
+        </span>
+		<span>
+			<button id="like-button" like-state="false" onclick="likeEvent()">
+				<span class="uix-button-icon-wrapper">
+					<img id="uix-like-button" class="uix-button-icon-watch-like" src="./image/main/oko-like-button.png">
+				</span>
+            </button>
+		</span>
+		<span>
+			<button id="dislike-button" dislike-state="false" onclick="dislikeEvent()">
+				<span class="dislikebtn-wordeffect">
+					<img id="uix-dislike-button" class="uix-button-icon-watch-like"
+                         src="./image/main/oko-dislike-button.png">
+				</span>
+            </button>
+		</span>
+		<span>
+			<button id="note-button" onclick="JavaScript.load('./javascript/stickies.js',function(){STICKIES.new()})">
+				<span class="notebtn-wordeffect">
+					<img id="uix-dislike-button" class="uix-button-icon-watch-like"
+                         src="./image/main/smallpic_note.png">
+				</span>
+            </button>
+		</span>
+                </div>
+                <div class="videostate-num">
+                    <span id="total-watched"></span>
+
+                    <div id="clickcard-event1" class="uix-clickcard-card1 uix-clickcard-card-reverse">
+                        <div class="card-border-arrow card-border-arrow-vertical" style="left: 34.5px;"></div>
+                        <div class="card-border">
+                            <div class="card-body-arrow card-body-arrow-vertical" style="left: 34.5px;"></div>
+                            <div class="card-body">
+                                <div class="b-hovercard-content">
+                                    <div class="b-hovercard-content-message">
+                                    <span class="watchednum-info">
+                                        已觀看人數
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="clickcard-event" class="uix-clickcard-card uix-clickcard-card-reverse">
+                        <div class="card-border-arrow card-border-arrow-vertical" style="left: 120px;"></div>
+                        <div class="card-border">
+                            <div class="card-body-arrow card-body-arrow-vertical" style="left: 120px;"></div>
+                            <div class="card-body">
+                                <div class="b-hovercard-content">
+                                    <div class="b-hovercard-content-message">
+                                    <span class="like-info">
+                                        15,000
+                                    </span>
+                                    <span class="dislike-info">
+                                        500
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <span style="text-align: center;margin-left: 390px; color:gray;font-weight: bold;">換一種教法</span>
+        <hr width="90%" color="gray" style="margin-top: 5px;">
+    </div>
+    <div id="videoList">
+
+    </div>
+    <div>
+        <span style="text-align: center;margin-left: 390px; color:gray;font-weight: bold;">影片評論</span>
+        <hr width="90%" color="gray" style="margin-top: 5px;">
+    </div>
+    <div class="videoCmt">
+        <div id="disqus_thread"></div>
+    </div>
+</div>
+<div class="hideAll" id="answer">
+    <div>
+        <img src="./image/main/loading.gif" id="loading"/>
+    </div>
+    <div id="ansMsg">
+
+    </div>
+</div>
+<div class="playerFramebtnWrapper hideAll" id="firstUploadBtn" style="margin:0 auto;width:200px">
+    <div class="playerFrameBtn-effect opener" onclick="">
+        <p style="margin-bottom:0px; margin-top:0px">我來教教看</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function deleteNote() {
+        ajaxRequest('GET', 'login', {
+            'Accept': 'application/json'
+        }, null, function (status, headers, body) {
+            ajaxRequest('GET', encodeURI('noteDelete?key=' + 'c4ca4238a0b923820dcc509a6f75849b'), {
+                'Accept': 'application/json'
+            }, null, function (status, headers, body) {
+                alert("success");
+            },function (status, headers, body) { // error callback
+                alert('error: ' + status);
+            }, null); // run callbacks in global scope
+        }, function (status, headers, body) { // error callback
+            switch (status) {
+                case 401:
+                    notLoginHandling();
+                default:
+                // do nothing
+            }
+        }, null);
+    }
+</script>
+<!--<input type="button" value="getNote" onclick="getNote()">-->
+<!--<input type="button" value="新增一個筆記" onclick="STICKIES.new()">-->
+<!--<input type="button" value="sticky.close" onclick="STICKIES.close()">-->
+<!--<input type="button" value="sendNote" onclick="sendNote()">-->
+<!--<input type="button" value="logout" onclick="logout()">-->
+<!--<input type="button" value="subjectRequest" onclick="subjectRequest()">-->
+<!--<input type="button" value="noteTable" onclick="noteTable()">-->
+<!--<input type="button" value="noteDelete" onclick="deleteNote()">-->
+<!--<label>上傳到質數(JH/7thGrader/math/numberAndQuantity/sub1)</label>-->
+<!--<input type="text" id="hashcode"/>-->
+<!--<input type="text" id="title1"/>-->
+<!--<input type="text" id="description1"/>-->
+<!--<input type="button" id="urlBtn" value="submit"/>-->
+<!--<input type="button" value="videoDelete" onclick="videoDelete()">-->
+<!--<input type="button" value="showUserVideo" onclick="showUserVideo()" >-->
+</div>
+
+<div id="modal1" style="display: none;" class="modal-example-content">
+    <div class="modal-example-header">
+        <button type="button" class="close" onclick="$.fn.custombox('close');">&times;</button>
+        <h4>關於我們</h4>
+    </div>
+    <div class="modal-example-body">
+		<pre>
+       我們是對教育抱持著熱忱的清大資工學生，由於對中小學生考試取向的學習方式感到不安，經過
+教授一番指點以及討論許久後，決定提出這個讓中小學生邊教邊學的平台，邊教邊學顧名思義就是學
+生不僅僅是學生也是老師，任何人想要分享自己的學問都可以透過這個平台，這樣時間久了好的教學
+方式或是內容自然會浮現出來，與目前只有單一個老師的傳統教育思維非常不同，將是教育界的一大
+革新，<a class='pencil' href='https://www.facebook.com/PENCILTeaching'>pencil團隊</a>希望對台灣教育盡點力量，不讓莘莘學子在學習的道路上被誤導、彷徨。
+
+2013/10/7 <a class='pencil' href='https://www.facebook.com/PENCILTeaching'>pencil團隊</a> 謹上
+		</pre>
+    </div>
+</div>
+
+<div class="footer">
+    <!--<pre>Privacy Policy ©2013 EXCELSIOR ALL RIGHTS RESERVED</pre>-->
+    <a>©2013Pencil</a>
+    <a>隱私政策</a>
+    <a href="#modal1" class="list-group-item" id="blur1">關於我們</a>
+    <a href="https://www.facebook.com/PENCILTeaching" data-step="11" data-intro="加入我們的 facebook 粉絲團，迅速得知 PENCIL 的最新動態!!" data-position="top">加入facebook粉絲團</a>
+</div>
+</div>
+
+
+</body>
+</html>

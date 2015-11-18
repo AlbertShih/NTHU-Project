@@ -1,0 +1,109 @@
+/*
+ ----------------------------
+ Modal css style
+ ----------------------------
+ */
+button.close {
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	-webkit-appearance: none;
+}
+
+.close {
+	float: right;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 1;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	opacity: .2;
+	filter: alpha(opacity=20);
+}
+.close:hover {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+	opacity: .5;
+	filter: alpha(opacity=50);
+}
+
+.modal-example-header{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #6D6767;
+}
+
+.modal-example-header h4 {
+	font-size: 18px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	line-height: 1.1;
+	
+}
+
+/*
+ ----------------------------
+ Modal Example 1
+ ----------------------------
+ */
+.modal-example-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    outline: 0 none;
+}
+@media only screen and (max-device-width: 480px) {
+    .modal-example-content {
+        width: 300px;
+    }
+    .modal-example-body p {
+        height: 200px;
+        overflow: hidden;
+    }
+}
+.modal-example-header {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 15px;
+}
+.modal-example-body p,
+.modal-example-header h4 {
+    margin: 0;
+}
+.modal-example-body {
+    padding: 20px;
+}
+/*
+ ----------------------------
+ About us Modal
+ ----------------------------
+ */
+ 
+.modal-example-body pre{
+	font-size:18px;
+	font-family: sans-serif;
+	color: #6D6767;
+}
+.pencil{
+	color: #cc6666;
+	text-decoration: none;
+}
+#paragraph{
+	width:1000px;
+	height: 300px;
+	margin: 0 auto;
+}
+/*
+ ----------------------------
+ other css
+ ----------------------------
+ */
+.aeffect{
+	margin-bottom: 0px;
+	margin-top: 0px;
+	color: white;
+	text-decoration: none;
+}

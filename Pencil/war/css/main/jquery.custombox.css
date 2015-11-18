@@ -1,0 +1,283 @@
+/*
+ *  jQuery Custombox v1.0.2 - 2013-10-08
+ *  jQuery Modal Window Effects.
+ *  http://dixso.github.io/custombox/
+ *  (c) 2013 Julio De La Calle - http://dixso.net - @dixso9
+ *
+ *  Under MIT License - http://www.opensource.org/licenses/mit-license.php
+ */
+
+/*
+ -------------------------------------------------
+ Overlay
+ -------------------------------------------------
+ */
+.custombox-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+/*
+ -------------------------------------------------
+ Modal
+ -------------------------------------------------
+ */
+.custombox-modal,
+.custombox-error {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.custombox-modal {
+    height: auto;
+    visibility: hidden;
+}
+
+/*
+ -------------------------------------------------
+ Error
+ -------------------------------------------------
+ */
+.custombox-error {
+    height: auto;
+    width: 200px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    color: #F00;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #FFF;
+    border-radius: 5px;
+}
+
+/*
+ -------------------------------------------------
+ Actions
+ -------------------------------------------------
+ */
+.custombox-html {
+    overflow-y: hidden;
+}
+.custombox-scrollbar {
+    position: relative;
+    overflow: hidden;
+}
+.custombox-show {
+    visibility: visible;
+}
+.custombox-show ~ .custombox-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+.custombox-perspective,
+.custombox-perspective body {
+    height: 100%;
+    overflow: hidden;
+}
+.custombox-perspective body  {
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    -ms-perspective: 600px;
+    -o-perspective: 600px;
+    perspective: 600px;
+}
+.custombox-container {
+    min-height: 100%;
+}
+
+/*
+ -------------------------------------------------
+ Fade in and scale up
+ -------------------------------------------------
+ */
+.custombox-fadein .custombox-modal-content {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    transform: scale(0.7);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0;
+}
+.custombox-show.custombox-fadein .custombox-modal-content {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+/*
+ -------------------------------------------------
+Slide and stick to top
+ -------------------------------------------------
+ */
+.custombox-slide-top {
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.custombox-slide-top .custombox-modal-content {
+    -webkit-transform: translateY(-200%);
+    -moz-transform: translateY(-200%);
+    -ms-transform: translateY(-200%);
+    -o-transform: translateY(-200%);
+    transform: translateY(-200%);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    opacity: 0;
+}
+.custombox-show.custombox-slide-top .custombox-modal-content {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+    border-radius: 0 0 3px 3px;
+    opacity: 1;
+}
+
+/*
+ -------------------------------------------------
+ Slide from the right
+ -------------------------------------------------
+ */
+.custombox-slide-right .custombox-modal-content {
+    -webkit-transform: translateX(20%);
+    -moz-transform: translateX(20%);
+    -ms-transform: translateX(20%);
+    -o-transform: translateX(20%);
+    transform: translateX(20%);
+    opacity: 0;
+    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    -moz-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    -o-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    -ms-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+.custombox-show.custombox-slide-right .custombox-modal-content {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/*
+ -------------------------------------------------
+Slide from the bottom
+ -------------------------------------------------
+ */
+.custombox-slide-bottom .custombox-modal-content {
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    transform: translateY(20%);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.custombox-show.custombox-slide-bottom .custombox-modal-content {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/*
+ -------------------------------------------------
+Slide and stick to center
+ -------------------------------------------------
+ */
+.custombox-slide-center .custombox-modal-content {
+    -webkit-transform: translateY(-200%);
+    -moz-transform: translateY(-200%);
+    -ms-transform: translateY(-200%);
+    -o-transform: translateY(-200%);
+    transform: translateY(-200%);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    opacity: 0;
+}
+.custombox-show.custombox-slide-center .custombox-modal-content {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+    border-radius: 0 0 3px 3px;
+    opacity: 1;
+}
+
+
+/*
+ -------------------------------------------------
+Blur
+ -------------------------------------------------
+ */
+.custombox-show.custombox-blur ~ .custombox-container * {
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    color: transparent;
+}
+.custombox-show.custombox-blur ~ .custombox-container img {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+.custombox-blur .custombox-modal-content {
+    -webkit-transform: translateY(-5%);
+    -moz-transform: translateY(-5%);
+    -ms-transform: translateY(-5%);
+    -o-transform: translateY(-5%);
+    transform: translateY(-5%);
+    opacity: 0;
+}
+.custombox-blur .custombox-modal-content,
+.custombox-show.custombox-blur ~ .custombox-container {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.custombox-show.custombox-blur .custombox-modal-content {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}

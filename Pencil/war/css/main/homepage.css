@@ -1,0 +1,209 @@
+.mainblockContainer {
+    /*min-width: 1000px;*/
+    /*max-width: 1200px;*/
+    margin: 0 auto;
+}
+
+.mainblock-top {
+    height: 450px;
+}
+
+.leftcontent {
+    /*width: 20%;*/
+    height: 769px;
+    float: left;
+}
+
+.rightcontent {
+    width: 896px;
+    height: 712px;
+    border-right: 1px solid #d3d3d3;
+	border-left: 1px solid #d3d3d3;
+    margin-left: 175px;
+}
+
+.mainblock {
+    margin: 0 auto;
+    /*border: 1px solid #000000;*/
+    height: 800px;
+}
+.leftcontent div {
+    float: right;
+}
+
+.leftcontent-recmd-subject {
+    width: 175px;
+    height: 143px;
+}
+
+.leftrecmd-wordeffect {
+    width: 100px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    margin-top: 4px;
+}
+
+.recmd-subject-name a:hover {
+    background-color: #32b16c;
+    color: white;
+    padding-left: 10px;
+}
+
+.leftcontent-recmd-subject h3 {
+    margin-top: 2px;
+    padding-top: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.excl-left-recmd {
+    vertical-align: middle;
+    display: inline-block;
+    display: block;
+    position: relative;
+    border: none;
+    height: 24px;
+    background: none;
+    color: #555;
+    font-size: 15px;
+}
+
+.excl-left-recmd-width {
+    width: 175px;
+}
+
+.top-five-teacher-block {
+    margin-top: 5px;
+    height: 165px;
+}
+
+.leftcontent div ul li hr {
+    background: #CCC;
+    border: 0;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075);
+    clear: both;
+    color: #CCC;
+    display: block;
+    height: 1px;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075);
+}
+
+.excl-banner {
+    width: 896px;
+    height: 96px;
+}
+
+.video-link-recmd img {
+    width: 201px;
+    height: 113px;
+}
+
+.book-recmd-block {
+    height: 165px;
+    border-bottom: 1px solid #d3d3d3;
+    padding-top: 5px;
+	padding-bottom:10px;
+}
+
+.book-recmd-block ul li {
+    float: left;
+    padding-left: 12px;
+    width: 211px;
+}
+
+.book-recmd-block ul li span {
+    float: left;
+}
+
+.book-recmd-block h2 {
+    padding-left: 11px;
+    padding-bottom: 10px;
+}
+
+.other-book-recmd {
+    height: 179px;
+}
+
+.other-book-recmd h2 {
+    padding-top: 10px;
+}
+
+.recmd-mainblock-title {
+    padding-left: 11px;
+    padding-top: 13px;
+    padding-bottom: 10px;
+}
+
+.recmd-mainblock-title span {
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.mainblock-searchblock {
+    border: 1px solid #a9382e;
+    background-color: #CC6666;
+    border-bottom: 1px solid #a9382e;
+    margin-top: 30px;
+    padding-top: 11px;
+    padding-bottom: 6px;
+    padding-left: 17px;
+    height: 50px;
+    -webkit-box-shadow: 0 1px 2px #ccc;
+    box-shadow: 0 1px 2px #ccc;
+}
+
+.mainblock-searchBar-wordeffect {
+    font-family: "MuseoSans300", sans-serif;
+    font-size: 25px;
+    white-space: nowrap;
+    padding-right: 17px;
+    color: white;
+}
+
+#mainblock-searchBar {
+    margin: 0px;
+    width: 910px;
+    height: 40px;
+    font-size: 20px;
+    border: 1px solid #C3C3C3;
+    background: white url(../../image/main/search.png) no-repeat 5px 50%;
+    background-size: 19px 19px;
+    padding: 2px 0px 2px 25px;
+    white-space: nowrap;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.video-extras-sparkbar-likes {
+	height: 1px;
+	background: #CCC;
+}
+.mainblocktitle-divider h2 {
+    display: block;
+    color: #898989;
+    text-align: center;
+    width: auto;
+    font-size: 140%;
+    font-family: "MuseoSans300",sans-serif;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+.mainblocktitle-divider h2 .section-seperator-text {
+    background: #fff;
+    display: inline-block;
+    padding: 0 15px;
+    font: inherit;
+}
+.mainblocktitle-divider{
+	margin-bottom:10px;
+}

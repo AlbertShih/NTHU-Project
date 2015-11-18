@@ -1,0 +1,16 @@
+.heading h1{
+    margin-top: 0;
+}
+.description p{
+    margin-top: 0;
+}
+.reference p a{
+    text-transform:uppercase;
+    text-shadow:1px 1px 1px #fff;
+    color:#666;
+    text-decoration:none;
+    font-size:10px;
+}
+.reference p a:hover{
+    color:#333;
+}

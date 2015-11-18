@@ -1,0 +1,86 @@
+    .uix-clickcard-card1{
+        display:none;
+        position: absolute;
+        z-index: 100000;
+        -moz-transition: opacity 0.2s ease-out;
+        -ms-transition: opacity 0.2s ease-out;
+        -o-transition: opacity 0.2s ease-out;
+        -webkit-transition: opacity 0.2s ease-out;
+        transition: opacity 0.2s ease-out;
+    }
+    .uix-clickcard-card{
+        display: none;
+		position: absolute;
+		z-index: 1000003;
+		-moz-transition: opacity 0.2s ease-out;
+		-ms-transition: opacity 0.2s ease-out;
+		-o-transition: opacity 0.2s ease-out;
+		-webkit-transition: opacity 0.2s ease-out;
+		transition: opacity 0.2s ease-out;
+	}
+	.uix-clickcard-card-reverse .card-border-arrow-vertical{
+		bottom: auto;
+		border-bottom-width: 12px;
+		border-bottom-color: #c5c5c5;
+		border-top-color: transparent;
+		border-top-width: 0;
+		top: -10px;
+		margin-top: -1px;
+	}
+	.uix-clickcard-card-reverse .card-body-arrow-vertical{
+		bottom: auto;
+		border-bottom-width: 12px;
+		border-bottom-color: #000;
+		border-top-color: transparent;
+		border-top-width: 0;
+		top: -10px;
+	}
+	.card-border-arrow, .card-body-arrow {
+		position: absolute;
+		width: 0;
+		height: 0;
+		vertical-align: top;
+		background: none;
+		border: 12px solid transparent;
+	}
+	.card-border{
+		float: left;
+		background: #000;
+		border: 1px solid #c5c5c5;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		-moz-box-shadow: 0 3px 3px rgba(0,0,0,.1);
+		-ms-box-shadow: 0 3px 3px rgba(0,0,0,.1);
+		-webkit-box-shadow: 0 3px 3px rgba(0,0,0,.1);
+		box-shadow: 0 3px 3px rgba(0,0,0,.1);
+	}
+	.card-body{
+		overflow: hidden;
+		padding: 10px;
+		font-size: 13px;
+		color: #333;
+	}
+	.b-hovercard-content-message {
+		font-size: 13px;
+		line-height: 1.4em;
+	}
+	.like-info{
+		display: inline-block;
+		background: url("../../image/main/oko-like-button.png") no-repeat 5px 50%;
+		padding-left: 32px;
+		color: #fff;
+		font-weight: bold;
+	}
+	.dislike-info{
+		display: inline-block;
+		background: url("../../image/main/oko-dislike-button.png") no-repeat 5px 50%;
+		padding-left: 32px;
+		margin-left: 10px;
+		color: #fff;
+		font-weight: bold;
+	}
+    .watchednum-info{
+        color:#fff;
+        font-weight: bold;
+    }

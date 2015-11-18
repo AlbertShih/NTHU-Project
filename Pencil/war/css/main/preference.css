@@ -1,0 +1,75 @@
+#userInfo {
+    padding-top: 10px;
+    border: 1px dotted #000000;
+    width: 300px;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+#preferenceInfo {
+    padding-top: 10px;
+    border: 1px dotted #000000;
+    width: 300px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.cellSpace {
+    margin: 3px;
+}
+
+#userInfo label {
+    font-size: 15px;
+    width: 30px;
+    height: 19px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 5px;
+    color: gray;
+}
+
+#preferenceInfo p {
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: green;
+    font-size: 18px;
+}
+
+#userInfo p {
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: green;
+    font-size: 18px;
+}
+
+#userInfo input {
+    width: 200px;
+    height: 20px;
+    font-size: 18px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border: 1px solid #aaa;
+    color: #000000;
+}
+
+#firstName {
+    padding-right: 2px;
+}
+
+#lastName {
+    padding-right: 3px;
+}
+
+#email {
+    padding-right: 35px;
+}
+
+#password {
+    padding-right: 5px;
+}

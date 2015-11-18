@@ -1,0 +1,337 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.yt-uix-button {
+    height: 2.55em;
+    padding: 0 .9em;
+    border-width: 1px;
+    border-style: solid;
+    outline: 0;
+    font-weight: bold;
+    font-size: 11px;
+    white-space: nowrap;
+    word-wrap: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.video-panel button {
+    font-family: arial, sans-serif;
+    font: -webkit-small-control;
+    box-sizing: border-box;
+    color: buttontext;
+    -webkit-box-align: center;
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    -webkit-writing-mode: horizontal-tb;
+    -webkit-appearance: button;
+}
+
+#video-headline {
+    position: relative;
+    padding: 1px 20px 1px;
+    border: 1px solid #e6e6e6;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-color: rgba(0, 0, 0, .098);
+    background: #fff;
+    margin-left: 29px;
+    margin-right: 29px;
+}
+
+#video-headline h1 {
+    display: block;
+    font-size: 19px;
+    line-height: normal;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+#video-headline .uix-expander-head {
+    cursor: auto;
+    -webkit-user-select: auto;
+    color: #000;
+}
+
+#user-header {
+    position: relative;
+    padding: 0 20px 15px;
+    border: 1px solid #e6e6e6;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-color: rgba(0, 0, 0, .098);
+    background: #fff;
+    margin-left: 29px;
+    margin-right: 29px;
+}
+
+.user-photo {
+    cursor: pointer;
+    color: #438bc5;
+    text-decoration: none;
+    float: left;
+}
+
+.video-thumb img {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    outline: none;
+}
+
+#user-header .ex-user-name {
+    margin-left: 10px;
+    color: #333;
+    font-weight: bold;
+    display: inline-block;
+    height: 22px;
+}
+
+#user-header .user-separator {
+    margin: 0 5px;
+    font-size: 11px;
+    color: #666;
+}
+
+#user-header .user-videos {
+    font-size: 11px;
+    color: #666;
+    display: inline-block;
+    height: 22px;
+}
+
+#subscription-container {
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.subscription-button {
+    padding: 0;
+    cursor: pointer;
+    height: 24px;
+    font-size: 11px;
+    border: 1px solid #ccc;
+    background-image: linear-gradient(to bottom, #fff 0, #e0e0e0 100%);
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    max-width: 100%;
+}
+
+.subscription-button .uix-button-icon-wrapper {
+    position: relative;
+    top: -1px;
+    left: -1px;
+    width: 24px;
+    height: 22px;
+    max-height: 22px;
+    border: 1px solid #880904;
+    background: #a9382e;
+    text-align: center;
+    line-height: 22px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    font-size: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.uix-button-icon-subscribe {
+    background: no-repeat url(youtubeGraph.webp) -270px -187px;
+    background-size: auto;
+    width: 16px;
+    height: 12px;
+    margin-right: 0;
+    margin-top: 5px;
+}
+
+.uix-button-content {
+    position: relative;
+    color: #333;
+    text-shadow: 0 1px 0 #fff;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.uix-button-content span {
+    padding: 0 6px;
+}
+
+.subscribe-label {
+    line-height: 22px;
+    visibility: visible;
+    display: block;
+    white-space: nowrap;
+    word-wrap: normal;
+    box-sizing: border-box;
+}
+
+.subscribed-label {
+    display: block;
+    line-height: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    box-sizing: border-box;
+}
+
+.unsubscribe-label {
+    display: block;
+    line-height: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    box-sizing: border-box;
+}
+
+#videos-views-info {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    min-width: 160px;
+    max-width: 220px;
+    color: #666;
+    font-size: 11px;
+    text-align: right;
+}
+
+.watch-view-count {
+    font-size: 19px;
+    line-height: 24px;
+    color: #333;
+}
+
+.video-extras-sparkbars {
+    height: 2px;
+    margin: 4px 0;
+    overflow: hidden;
+}
+
+.video-extras-sparkbar-likes {
+    float: left;
+    height: 4px;
+    background: #590;
+}
+
+.video-extras-sparkbar-dislikes {
+    float: left;
+    height: 4px;
+    background: #ccc;
+}
+
+.likes-dislikes-content img {
+    position: relative;
+    vertical-align: middle;
+    border-image: none;
+}
+
+.icon-watch-stats-like {
+    top: -1px;
+    background: no-repeat url("ok-like-buton.png");
+    background-size: auto;
+    width: 13px;
+    height: 14px;
+}
+
+.icon-watch-stats-dislike {
+    background: no-repeat url(youtubeGraph.webp) -293px -111px;
+    background-size: auto;
+    width: 13px;
+    height: 14px;
+}
+
+#likes-dislikes-btn-actions {
+    float: left;
+    margin-top: 4px;
+}
+
+.uix-button-group {
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-left: 29px;
+}
+
+.uix-button-icon-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+}
+
+#watch-like .yt-uix-button {
+    padding: 0 7px;
+    color: #555;
+    outline: 0;
+    background: none;
+    text-shadow: 0 1px 0 #fff;
+    border-color: transparent;
+    border-radius: 2px;
+    margin-right: 10px;
+    border-right-style: solid;
+    vertical-align: top;
+    display: inline-block;
+    -webkit-border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+}
+
+.uix-button-icon-watch-like {
+    background: no-repeat url("/war/image/main/oko-like-button.png");
+    background-size: auto;
+    width: 23px;
+    height: 23px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+#watch-dislike .yt-uix-button {
+    padding: 0 5px;
+    color: #555;
+    outline: 0;
+    margin-right: 10px;
+    border-right-style: solid;
+    background: none;
+    border-color: transparent;
+    border-radius: 2px;
+    vertical-align: top;
+    display: inline-block;
+    text-shadow: 0 1px 0 #fff;
+    -webkit-border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.uix-button-icon-watch-dislike {
+    background: no-repeat  -140px -184px;
+    background-size: auto;
+    width: 23px;
+    height: 23px;
+    padding-bottom: 1px;
+    vertical-align: middle;
+    margin-right: 0;
+}
+
+#watch-like-dislike-buttons button:hover {
+    border-color: #000;
+    color: #999;
+}
+
+.clearfix:before, .clearfix:after {
+    display: block;
+    height: 0;
+}
+	
+			
+	
